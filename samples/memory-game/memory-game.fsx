@@ -133,8 +133,17 @@ let viewCard (card: Card) =
         ]
 
 let view model =
-    div [Style [("width", "500px")]] 
-        [ for card in model.Cards -> viewCard card ]
+    if gameCleared model 
+    then 
+        div [] [
+                h1 [] [ 
+                    text "Congrats, You win!"
+                    button [onMouseClick (fun _ -> StartNewGame) ] [text "Start new game"] 
+                ]; 
+            ]
+    else
+        div [ Style ["width", "500px"] ] 
+            [ for card in model.Cards -> viewCard card ]
         
 let initialModel = initModel()
 createSimpleApp initialModel view update Virtualdom.createRender
