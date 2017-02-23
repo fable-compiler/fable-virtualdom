@@ -36,7 +36,11 @@ let createRenderer viewFn initModel sel h v =
         s initModel
         fun model -> viewFn model h
 
-    let targetNode = Fable.Import.Browser.document.body.querySelector(sel)
+    let targetNode = 
+        match sel with
+        | NodeSelector selector -> Fable.Import.Browser.document.body.querySelector(selector)
+        | DomNode node -> node
+        
     let comp = Fable.Helpers.React.com<Components.App<_>,_,_> {main = main} []
     Fable.Import.ReactDom.render(comp,targetNode)
 
