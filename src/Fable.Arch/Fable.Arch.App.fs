@@ -2,6 +2,7 @@ module Fable.Arch.App
 
 open Fable.Core
 open Fable.Core.JsInterop
+open Fable.Import.Browser
 open System.Diagnostics
 
 open Html
@@ -39,7 +40,9 @@ module Types =
             Subscriber: Subscriber<'TMessage, 'TModel>
         }
 
-    type Selector = string
+    type Selector = 
+        | NodeSelector of string
+        | DomNode of HTMLElement
 
     /// AppSpecification is a type used as an interface for the renderer
     ///
@@ -199,7 +202,7 @@ module AppApi =
             Update = update
             InitMessage = (fun _ -> ())
             CreateRenderer = createRenderer
-            NodeSelector = "body"
+            NodeSelector = NodeSelector "body"
             Producers = []
             Subscribers = []
         }
@@ -209,7 +212,10 @@ module AppApi =
         createApp model view (fun x y -> (update x y), [])
 
     // Fluent api functions to add optional configurations to the application
-    let withStartNodeSelector selector app = { app with NodeSelector = selector }
+    let withStartNodeSelector (selector: string) app = { app with NodeSelector = NodeSelector selector }
+
+        // Fluent api functions to add optional configurations to the application
+    let withStartNode (node: HTMLElement) app = { app with NodeSelector = DomNode node }
     let withInitMessage msg app = { app with InitMessage = msg }
 
     let private withInstrumentationProducer p app =

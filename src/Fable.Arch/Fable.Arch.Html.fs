@@ -315,9 +315,13 @@ module Events =
 
 [<AutoOpen>]
 module Svg =
-    let svgNS = Attribute.Property("namespace","http://www.w3.org/2000/svg")
+    let svgNS = Attribute.Property("namespace", "http://www.w3.org/2000/svg")
     let svgElem tagName attrs children = Element((tagName, svgNS::attrs), children)
-
+    let line x = svgElem "line" x
+    let x1 x = attribute "x1" x
+    let x2 x = attribute "x2" x
+    let y1 x = attribute "y1" x
+    let y2 x = attribute "y2" x
     let svg x = svgElem "svg" x
     let circle x = svgElem "circle" x
     let rect x = svgElem "rect" x
