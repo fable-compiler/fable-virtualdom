@@ -1,9 +1,6 @@
-# fable-import-virtualdom
+# Fable-Arch [Site](http://fable.io/fable-arch/#/)
 
 Fable bindings for virtual-dom
-
-## Website
-[fable.io/fable-arch](http://fable.io/fable-arch/#/)
 
 ## Installation
 
