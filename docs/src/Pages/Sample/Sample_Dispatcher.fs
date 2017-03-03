@@ -177,6 +177,11 @@ module Dispatcher =
               FileName = "calculator"
               Height = 600
             }
+            { Title = "Memory game"
+              SubTitle = "The classical memory game with F# and Fable-Arch"
+              FileName = "memory-game"
+              Height = 300
+            }
             { Title = "Routing"
               SubTitle = "This application show you how to use the navigation feature of Fable-Arch"
               FileName = "routing"
