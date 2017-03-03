@@ -141,6 +141,11 @@ module Dispatcher =
               FileName = "clock"
               Height = 300
             }
+            { Title = "Clock with SVG"
+              SubTitle = "A clock showing producer usage with svg view"
+              FileName = "clock-svg"
+              Height = 300
+            }
             { Title = "Echo"
               SubTitle = "An echo application showing how to make ajax calls"
               FileName = "echo"
