@@ -14,7 +14,7 @@ open Fable.Arch.Html
 open Fable.Import
 open Fable.Import.Browser
 
-type Actions = Tick of DateTime
+type Messages = Tick of DateTime
 type Model = CurrentTime of DateTime
 
 let initial() : Model = CurrentTime DateTime.Now 
