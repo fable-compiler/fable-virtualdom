@@ -84,7 +84,7 @@ let view model =
       div [ classy "column" ] []
     ]
 
-createApp Model.Initial view update Virtualdom.createRender
+createApp Model.Initial view update Virtualdom.createRenderer
 |> withStartNodeSelector "#sample"
 |> withNavigation urlParser navigationUpdate
 |> start

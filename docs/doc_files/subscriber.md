@@ -22,7 +22,7 @@ type ModelChanged<'TMessage, 'TModel> =
 Here a sample, showing how to print in the console all the message handle by the app.
 
 ```fsharp
-createApp Model.Initial view update Virtualdom.createRender
+createApp Model.Initial view update Virtualdom.createRenderer
 |> withStartNodeSelector "#app"
 // Here is the subscriber
 |> withSubscriber (fun x -> console.log("Action received:", x.Message))

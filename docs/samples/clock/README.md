@@ -77,7 +77,7 @@ let tickProducer push =
 To a register a producer in your application you need to call `withProducer`.
 
 ```fsharp
-createApp Model.Initial view update Virtualdom.createRender
+createApp Model.Initial view update Virtualdom.createRenderer
 |> withStartNodeSelector "#sample"
 |> withProducer tickProducer
 |> start

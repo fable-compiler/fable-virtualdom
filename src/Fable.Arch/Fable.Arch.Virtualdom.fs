@@ -73,7 +73,7 @@ let render handler view viewState =
     let tree = renderSomething handler view
     {viewState with NextTree = tree}
 
-let createRender selector handler view =
+let createRenderer selector handler view =
     let node = 
         match selector with
         | Query sel -> document.body.querySelector(sel) :?> HTMLElement

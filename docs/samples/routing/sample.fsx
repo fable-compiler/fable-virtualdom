@@ -262,7 +262,7 @@ let view model =
 // some of the other more advanced examples for how to
 // use createApp. In addition to the application functions
 // we also need to specify which renderer to use.
-createApp Model.Initial view update Virtualdom.createRender
+createApp Model.Initial view update Virtualdom.createRenderer
 |> withStartNodeSelector "#sample"
 |> withProducer (routeProducer locationHandler router)
 |> withSubscriber (routeSubscriber locationHandler routerF)

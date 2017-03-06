@@ -236,7 +236,7 @@ module Main =
 
   let routerF m = router.Route m.Message
 
-  createApp Model.Initial view update Virtualdom.createRender
+  createApp Model.Initial view update Virtualdom.createRenderer
   |> withStartNodeSelector "#app"
   |> withProducer (routeProducer locationHandler router)
   |> withSubscriber (routeSubscriber locationHandler routerF)
