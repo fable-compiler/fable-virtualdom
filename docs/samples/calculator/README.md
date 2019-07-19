@@ -195,7 +195,7 @@ div
 # Create the app
 ```fsharp
 let initialState = InputStack []
-createSimpleApp initialState view update Virtualdom.createRender
+createSimpleApp initialState view update Virtualdom.createRenderer
 |> withStartNodeSelector "#calc"
 |> start
 ```

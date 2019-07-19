@@ -53,7 +53,7 @@ let update model action =
 We attach the navigation module by passing the `urlParser` and `navigationUpdate`.
 
 ```fsharp
-createApp Model.Initial view update Virtualdom.createRender
+createApp Model.Initial view update Virtualdom.createRenderer
 |> withStartNodeSelector "#sample"
 |> withNavigation urlParser navigationUpdate
 |> start

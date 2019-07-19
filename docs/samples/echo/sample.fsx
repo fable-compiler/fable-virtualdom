@@ -138,6 +138,6 @@ let view model =
     ]
 
 
-createApp Model.Initial view update Virtualdom.createRender
+createApp Model.Initial view update Virtualdom.createRenderer
 |> withStartNodeSelector "#sample"
 |> start

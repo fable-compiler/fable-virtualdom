@@ -72,7 +72,7 @@ module Clock =
     push(Tick DateTime.Now)
 
 
-  createApp Model.Initial view update Virtualdom.createRender
+  createApp Model.Initial view update Virtualdom.createRenderer
   |> withStartNodeSelector "#sample"
   |> withProducer tickProducer
   |> start

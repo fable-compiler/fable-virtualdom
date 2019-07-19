@@ -51,7 +51,7 @@ let view (model: Model) =
       div [ classy "column" ] []
     ]
 
-createSimpleApp "" view update Virtualdom.createRender
+createSimpleApp "" view update Virtualdom.createRenderer
 |> withStartNodeSelector "#sample"
 |> withSubscriber (fun x -> Fable.Import.Browser.console.log("Event received: ", x))
 |> start

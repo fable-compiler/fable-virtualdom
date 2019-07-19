@@ -88,7 +88,7 @@ let routerF m = router.Route m.Message
 With attach our helpers to the application.
 
 ```fsharp
-createApp Model.Initial view update Virtualdom.createRender
+createApp Model.Initial view update Virtualdom.createRenderer
 |> withStartNodeSelector "#sample"
 |> withProducer (routeProducer locationHandler router)
 |> withSubscriber (routeSubscriber locationHandler routerF)

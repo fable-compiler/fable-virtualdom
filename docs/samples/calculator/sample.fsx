@@ -175,6 +175,6 @@ let view model =
 // some of the other more advanced examples for how to
 // use createApp. In addition to the application functions
 // we also need to specify which renderer to use.
-createSimpleApp (InputStack []) view update Virtualdom.createRender
+createSimpleApp (InputStack []) view update Virtualdom.createRenderer
 |> withStartNodeSelector "#sample"
 |> start
